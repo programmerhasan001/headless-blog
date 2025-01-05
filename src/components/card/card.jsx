@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./card.module.scss";
+import Button from "../button/button";
 
 const Card = () => (
   <div className={styles.card}>
@@ -15,10 +16,11 @@ const Card = () => (
       <div className={`${styles.card_title} h3 mb-20`}>
         Class aptent taciti sociosqu ad litora torquent per conubia nostra
       </div>
-      <p className={`${styles.card_summary} h6 fw-600`}>
+      <p className={`${styles.card_summary} h6 fw-600 mb-30`}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ullam,
         explicabo fuga aspernatur dicta quos esse doloremque.
       </p>
+      <Button href="#">Read More</Button>
     </div>
   </div>
 );
