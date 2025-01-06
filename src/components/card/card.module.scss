@@ -1,3 +1,6 @@
+.card_wrap {
+  container-type: inline-size;
+}
 .card {
   display: flex;
   gap: 30px;
@@ -28,6 +31,20 @@
   justify-content: center;
 }
 
-.card_label {
-    
+@container (width < 700px) {
+  .card {
+    flex-direction: column;
+  }
+  .card_content {
+    padding: 0 30px 30px;
+  }
+  .card_label {
+    font-size: 16px;
+  }
+  .card_title {
+    font-size: 24px;
+  }
+  .card_summary {
+    display: none;
+  }
 }
