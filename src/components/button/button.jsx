@@ -50,4 +50,6 @@ Button.Icon = ({ iconType }) => {
   return null;
 };
 
+Button.Icon.displayName = "Icon";
+
 export default Button;

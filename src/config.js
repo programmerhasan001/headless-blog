@@ -1,5 +1,5 @@
 const config = {
-  api: "http://localhost:1337",
+  api: "https://fresh-spirit-281e92512c.strapiapp.com",
 };
 
 export default config;

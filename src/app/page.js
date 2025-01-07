@@ -1,21 +1,6 @@
 import Card from "@/components/card/card";
 import { IconTypes } from "@/components/button/button";
-import config from "@/config";
-
-const fetchBlogs = async (params) => {
-  const reqOptions = {
-    headers: {
-      Authorization: `Bearer ${process.env.API_TOKEN}`,
-    },
-  };
-  const request = await fetch(
-    `${config.api}/api/blogs?populate=*${params}`,
-    reqOptions
-  );
-  const response = await request.json();
-
-  return response;
-};
+import fetchBlogs from "@/helpers/fetch-blogs";
 
 const Home = async () => {
   const [featuredBlogs, blogs] = await Promise.all([
@@ -33,7 +18,7 @@ const Home = async () => {
           summary={featuredBlog?.Summary}
           href={`/${featuredBlog?.slug}`}
           btnIcon={IconTypes?.ARROW_RIGHT}
-          imageSrc={`http://localhost:1337${featuredBlog?.FeaturedImage?.url}`}
+          imageSrc={`${featuredBlog?.FeaturedImage?.url}`}
           imageAlt="Featured Image"
           className="mb-30"
         />
@@ -48,7 +33,7 @@ const Home = async () => {
               summary={blog?.Summary}
               href={`/${blog?.slug}`}
               btnIcon={IconTypes?.ARROW_RIGHT}
-              imageSrc={`http://localhost:1337${blog?.FeaturedImage?.url}`}
+              imageSrc={`${blog?.FeaturedImage?.url}`}
               imageAlt="Featured Image"
               className="mb-30"
             />
